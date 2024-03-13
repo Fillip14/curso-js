@@ -1,2 +1,5 @@
-console.log("Ola mundo");
-console.log("Este trecho exibido no console navegador")
+const alerta = alert("Com a nossa mensagem."); //Alerta
+const confirma = confirm("Deseja realmente apagar?"); //Confirm dentro do window
+const nome = prompt("Digite o seu nome:"); //Prompot dentro do window
+
+console.log("Alerta ", alerta, "Confirmado?", confirma, "Nome: ", nome);
