@@ -1,6 +1,19 @@
-const alerta = alert("Com a nossa mensagem."); //Alerta
-const confirma = confirm("Deseja realmente apagar?"); //Confirm dentro do window
-const nome = prompt("Digite o seu nome:"); //Prompot dentro do window
+const numero = Number(prompt("Digite um número:"));
+const numeroDigitado = document.getElementById("seuNumero");
+const textoSelecionado = document.getElementById("texto");
+console.log(numeroDigitado);
 
-console.log("Alerta ", alerta, "Confirmado?", confirma, "Nome: ", nome);
-document.body.innerHTML += `Alerta: ${alerta}. Confirmou? ${confirma}. O seu nome é: ${nome}`;
+numeroDigitado.innerHTML = numero;
+// console.log(numeroDigitado);
+textoSelecionado.innerHTML += `<p>Raiz quadrada é ${numero ** (1 / 2)}. </p>`;
+textoSelecionado.innerHTML += `<p>É inteiro? ${Number.isInteger(numero)}. </p>`;
+textoSelecionado.innerHTML += `<p>É NaN? ${Number.isNaN(numero)}. </p>`;
+textoSelecionado.innerHTML += `<p>Arrendonda pra baixo ${Math.ceil(
+  numero
+)}. </p>`;
+textoSelecionado.innerHTML += `<p>Arrendonda pra cima ${Math.round(
+  numero
+)}. </p>`;
+textoSelecionado.innerHTML += `<p>Duas casas decimais ${numero.toFixed(
+  2
+)}. </p>`;
