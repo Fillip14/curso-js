@@ -1,19 +1,25 @@
-const numero = Number(prompt("Digite um número:"));
-const numeroDigitado = document.getElementById("seuNumero");
-const textoSelecionado = document.getElementById("texto");
-console.log(numeroDigitado);
+const meuEscopo = () => {
+  const formulario = document.querySelector(".form");
+  const resultado = document.querySelector(".resultado");
+  const pessoas = [];
 
-numeroDigitado.innerHTML = numero;
-// console.log(numeroDigitado);
-textoSelecionado.innerHTML += `<p>Raiz quadrada é ${numero ** (1 / 2)}. </p>`;
-textoSelecionado.innerHTML += `<p>É inteiro? ${Number.isInteger(numero)}. </p>`;
-textoSelecionado.innerHTML += `<p>É NaN? ${Number.isNaN(numero)}. </p>`;
-textoSelecionado.innerHTML += `<p>Arrendonda pra baixo ${Math.ceil(
-  numero
-)}. </p>`;
-textoSelecionado.innerHTML += `<p>Arrendonda pra cima ${Math.round(
-  numero
-)}. </p>`;
-textoSelecionado.innerHTML += `<p>Duas casas decimais ${numero.toFixed(
-  2
-)}. </p>`;
+  function recebeEventoForm(evento) {
+    evento.preventDefault();
+    const nome = formulario.querySelector(".nome");
+    const sobrenome = formulario.querySelector(".sobrenome");
+    const peso = formulario.querySelector(".peso");
+    const altura = formulario.querySelector(".altura");
+
+    pessoas.push({
+      nome: nome.value,
+      sobrenome: sobrenome.value,
+      peso: peso.value,
+      altura: altura.value,
+    });
+    console.log(pessoas[pessoas.length - 1].nome);
+    resultado.innerHTML += `<p>${nome.value}</p>`;
+  }
+
+  formulario.addEventListener("submit", recebeEventoForm);
+};
+meuEscopo();
