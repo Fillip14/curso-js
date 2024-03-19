@@ -82,19 +82,19 @@ function Criacalculadora() {
   const display = document.querySelector(".display");
 
   this.inicia = () => {
-    this.cliqueBotoes();
-    this.capturaEnter();
+    cliqueBotoes();
+    capturaEnter();
   };
 
-  this.capturaEnter = () => {
+  capturaEnter = () => {
     document.addEventListener("keyup", (e) => {
       if (e.key === "Enter") {
-        this.realizaConta();
+        realizaConta();
       }
     });
   };
 
-  this.realizaConta = () => {
+  realizaConta = () => {
     try {
       const conta = eval(display.value); //Extremante perigoso pois pode interpretar qualquer codigo digitado
 
@@ -110,20 +110,20 @@ function Criacalculadora() {
     }
   };
 
-  this.cliqueBotoes = () => {
+  cliqueBotoes = () => {
     document.addEventListener("click", (e) => {
       const el = e.target;
-      if (el.classList.contains("btn-num")) this.addNumDisplay(el.innerText);
-      if (el.classList.contains("btn-clear")) this.clearDisplay();
-      if (el.classList.contains("btn-del")) this.apagaUm();
-      if (el.classList.contains("btn-eq")) this.realizaConta();
+      if (el.classList.contains("btn-num")) addNumDisplay(el.innerText);
+      if (el.classList.contains("btn-clear")) clearDisplay();
+      if (el.classList.contains("btn-del")) apagaUm();
+      if (el.classList.contains("btn-eq")) realizaConta();
       display.focus();
     });
   };
 
-  this.addNumDisplay = (valor) => (display.value += valor);
-  this.clearDisplay = () => (display.value = "");
-  this.apagaUm = () => (display.value = display.value.slice(0, -1));
+  addNumDisplay = (valor) => (display.value += valor);
+  clearDisplay = () => (display.value = "");
+  apagaUm = () => (display.value = display.value.slice(0, -1));
 }
 
 const calculadora = new Criacalculadora();
