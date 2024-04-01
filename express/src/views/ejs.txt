@@ -1,0 +1,4 @@
+<%= Imprime sem escapar caracteres  (if, for...) %>
+<%- Imprime escapando caracteres (if, for...) %>
+<%# Comentário %>
+<%- include("CAMINHO/ARQUIVO") %>
