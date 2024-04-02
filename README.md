@@ -1,1 +1,3 @@
-# Aprendizado do curso de javascript integrando webpack, node, express e mongoDB.
+# Curso de javascript e typescript da udemy
+
+Estudo integrado com webpack, node, express e mongoDB.
