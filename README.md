@@ -1,1 +1,1 @@
-# Aprendizado de curso de javascript e outros, da udemy
+# Aprendizado do curso de javascript integrando webpack, node, express e mongoDB.
